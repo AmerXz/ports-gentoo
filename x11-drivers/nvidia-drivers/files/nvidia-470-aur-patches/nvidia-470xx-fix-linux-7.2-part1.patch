@@ -17,8 +17,8 @@ rg -l atomic_state | xargs sed -i 's/atomic_state/atomic_commit/g; s/ATOMIC_STAT
 
 diff --git a/conftest.sh b/conftest.sh
 index 294d6e5..07e821e 100755
---- a/conftest.sh
-+++ b/conftest.sh
+--- a/kernel/conftest.sh
++++ b/kernel/conftest.sh
 @@ -1927,7 +1927,7 @@ compile_test() {
              # Determine if the DRM atomic modesetting subsystem is usable
              #
@@ -156,8 +156,8 @@ index 294d6e5..07e821e 100755
  
 diff --git a/nvidia-drm/nvidia-drm-crtc.c b/nvidia-drm/nvidia-drm-crtc.c
 index 69db1cb..c74f168 100644
---- a/nvidia-drm/nvidia-drm-crtc.c
-+++ b/nvidia-drm/nvidia-drm-crtc.c
+--- a/kernel/nvidia-drm/nvidia-drm-crtc.c
++++ b/kernel/nvidia-drm/nvidia-drm-crtc.c
 @@ -288,15 +288,15 @@ static bool __is_async_flip_requested(const struct drm_plane *plane,
      return false;
  }
@@ -198,8 +198,8 @@ index 69db1cb..c74f168 100644
  #endif
 diff --git a/nvidia-drm/nvidia-drm-modeset.c b/nvidia-drm/nvidia-drm-modeset.c
 index 640b341..28e30ee 100644
---- a/nvidia-drm/nvidia-drm-modeset.c
-+++ b/nvidia-drm/nvidia-drm-modeset.c
+--- a/kernel/nvidia-drm/nvidia-drm-modeset.c
++++ b/kernel/nvidia-drm/nvidia-drm-modeset.c
 @@ -42,23 +42,23 @@
  #include <drm/drm_atomic_helper.h>
  #include <drm/drm_crtc.h>
@@ -299,8 +299,8 @@ index 640b341..28e30ee 100644
       * drops its reference after we return.
 diff --git a/nvidia-drm/nvidia-drm-modeset.h b/nvidia-drm/nvidia-drm-modeset.h
 index 8cf25ad..6b7e759 100644
---- a/nvidia-drm/nvidia-drm-modeset.h
-+++ b/nvidia-drm/nvidia-drm-modeset.h
+--- a/kernel/nvidia-drm/nvidia-drm-modeset.h
++++ b/kernel/nvidia-drm/nvidia-drm-modeset.h
 @@ -30,17 +30,17 @@
  #include "nvkms-kapi.h"
  
@@ -327,8 +327,8 @@ index 8cf25ad..6b7e759 100644
  void nv_drm_handle_flip_occurred(struct nv_drm_device *nv_dev,
 diff --git a/nvidia-drm/nvidia-drm.Kbuild b/nvidia-drm/nvidia-drm.Kbuild
 index af3f4af..fd31a04 100644
---- a/nvidia-drm/nvidia-drm.Kbuild
-+++ b/nvidia-drm/nvidia-drm.Kbuild
+--- a/kernel/nvidia-drm/nvidia-drm.Kbuild
++++ b/kernel/nvidia-drm/nvidia-drm.Kbuild
 @@ -62,7 +62,7 @@ NV_CONFTEST_FUNCTION_COMPILE_TESTS += drm_reinit_primary_mode_group
  NV_CONFTEST_FUNCTION_COMPILE_TESTS += get_user_pages_remote
  NV_CONFTEST_FUNCTION_COMPILE_TESTS += get_user_pages
