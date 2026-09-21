@@ -9,8 +9,8 @@ Subject: [PATCH] Tentative fix for NVIDIA 470.256.02 driver for Linux 7.3-rc1
 
 diff --git a/nvidia/nv-acpi.c b/nvidia/nv-acpi.c
 index 0d11845..eb82b1d 100644
---- a/nvidia/nv-acpi.c
-+++ b/nvidia/nv-acpi.c
+--- a/kernel/nvidia/nv-acpi.c
++++ b/kernel/nvidia/nv-acpi.c
 @@ -22,6 +22,8 @@ static NV_STATUS   nv_acpi_extract_buffer  (const union acpi_object *, void *, N
  static NV_STATUS   nv_acpi_extract_package (const union acpi_object *, void *, NvU32, NvU32 *);
  static NV_STATUS   nv_acpi_extract_object  (const union acpi_object *, void *, NvU32, NvU32 *);
