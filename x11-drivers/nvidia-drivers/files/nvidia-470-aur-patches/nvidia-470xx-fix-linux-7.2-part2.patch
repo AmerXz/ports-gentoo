@@ -12,8 +12,8 @@ Add compatibility shim for the rename.
 
 diff --git a/conftest.sh b/conftest.sh
 index 07e821e..d41a22b 100755
---- a/conftest.sh
-+++ b/conftest.sh
+--- a/kernel/conftest.sh
++++ b/kernel/conftest.sh
 @@ -1927,7 +1927,7 @@ compile_test() {
              # Determine if the DRM atomic modesetting subsystem is usable
              #
@@ -100,8 +100,8 @@ index 07e821e..d41a22b 100755
              typeof(*funcs->atomic_check) conftest_drm_plane_atomic_check_has_atomic_commit_arg;
 diff --git a/nvidia-drm/nvidia-drm-priv.h b/nvidia-drm/nvidia-drm-priv.h
 index ac932f9..b52635b 100644
---- a/nvidia-drm/nvidia-drm-priv.h
-+++ b/nvidia-drm/nvidia-drm-priv.h
+--- a/kernel/nvidia-drm/nvidia-drm-priv.h
++++ b/kernel/nvidia-drm/nvidia-drm-priv.h
 @@ -25,6 +25,17 @@
  
  #include "nvidia-drm-conftest.h" /* NV_DRM_AVAILABLE */
